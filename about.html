@@ -168,16 +168,22 @@ h1 {
 </div>
 </div>
 
-<div class="mobile-warning">
-    <h1>Warning: This page is not optimized for mobile.</h1>
-    <p>Please view this page on a desktop device for the best experience.</p>
-  </div>
+
 <!-- partial -->
 <script>
-    window.addEventListener('load', () => {
-  // Add a class to the body to signal that the page is not mobile-friendly
-  document.body.classList.add('no-mobile-support'); 
-});
+ function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+  }
+
+  // Function to redirect if the device is a mobile device
+  function redirectIfMobile() {
+    if (isMobileDevice()) {
+      window.location.href = "m/about.html"; // Redirect to your mobile page
+    }
+  }
+
+  // Call the redirect function when the page loads
+  window.onload = redirectIfMobile;
 
 </script>
 

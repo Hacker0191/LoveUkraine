@@ -340,3 +340,50 @@ body.dark .search-field i{
     }
 }
 
+.success-notification {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    color: red;
+    border-radius: 5px;
+    text-align: center;
+    
+  }
+
+
+  .hero-container{
+    overflow: hidden;
+    
+    .hero-image{
+      width: 100vw;
+      height: 90vh;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+      
+      img{
+        width: 102vw;
+        height: 102vh;
+        transform: translateX(-1rem);
+        object-fit: cover;
+        object-position: center;
+        filter: blur(var(--blur)); 
+      }
+    }
+    
+    .hero-overlay{
+      min-height: 90vh;
+      background-color: rgba(0, 0, 0, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+     
+      h1{
+        font-size: 4rem;
+        color: #fff;
+      }
+    }
+  }
+
+
+  

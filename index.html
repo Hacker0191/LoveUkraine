@@ -3,9 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Ukraine</title>
+    <title>Love  Ukraine 🇺🇦</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+   table {
+  width: 70%; /* Adjust width as needed (not full screen) */
+  margin: 0 auto 20px auto; /* Center table horizontally, add bottom margin */
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #000000;
+  padding: 15px;
+  text-align: left;
+}
+
+thead th {
+  background-color: #ffafaf;  /* Darker header background */
+  color: #333;             /* Darker text color for contrast */
+  font-weight: bold;
+  text-align: center;      /* Center header text */
+}
+
+/* Responsive Design Tweaks */
+@media screen and (max-width: 600px) { 
+  /* Narrow screen styles */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px; 
+    left: -9999px; 
+  }
+
+  tr { 
+    margin: 0 0 15px 0;
+  }
+  
+  td { 
+    border: none;
+    border-bottom: 1px solid #000000; 
+    position: relative;    
+    padding-left: 50%;   
+  }
+
+  td::before { 
+    position: absolute;
+    top: 10px; 
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    content: attr(data-label);
+    font-weight: bold; 
+  }
+}
+
+
+    </style>
 </head>
 <body>
     
@@ -30,18 +89,19 @@
        <nav>
         <div class="nav-bar">
             <i class='bx bx-menu sidebarOpen' ></i>
-            <span class="logo navLogo"><a href="#">Love </a></span>
+            <span class="logo navLogo"><a href="#">Love 🇺🇦</a></span>
             <div class="menu">
                 <div class="logo-toggle">
-                    <span class="logo"><a href="#">Love </a></span>
+                    <span class="logo"><a href="#">Love 🇺🇦</a></span>
                     <i class='bx bx-x siderbarClose'></i>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="gallery.html">Images</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="darkLight-searchBox">
@@ -65,9 +125,37 @@
 
 
 
+    <header class="hero-container">
+  
+      <div class="hero-image">
+        <img src="./images/priroda-ukraine.jpg">
+      </div>
+      
+      <div class="hero-overlay">
+        <h2 style="color: white; padding: 10px; font-size: 22px;">Spring brings renewal, and Ukraine's spirit is blooming with resilience. <br>#WeStandWithUkraine <br><br> Through darkness, Ukraine's light shines ever stronger. Brighter days are ahead. <br> #HopeForUkraine <br><br>Together, with hearts full of hope, Ukraine perseveres. <br>#SlavaUkraini</h2>
+        
+      </div>
+    </header>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Facts</th>
+          <th>Myths</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data for Row 1, Column 1</td>
+          <td>Data for Row 1, Column 2</td>
+        </tr>
+        <tr>
+          <td>Data for Row 2, Column 1</td>
+          <td>Data for Row 2, Column 2</td>
+        </tr>
+        </tbody>
+    </table>
     
-
-
 
 <!-- Newsletter Starts -->
 <div class="w-full p-5">
@@ -82,13 +170,13 @@
 
     </div>
 
-    <form>
+    <form name="ComingSoon" action="https://api.web3forms.com/submit" method="POST">
     <div class="w-full">
 
       <div class="flex flex-col justify-center sm:flex-row gap-3 w-full">
 
-        <input type="text" placeholder="Enter your email" class="sm:w-2/4 sm:max-w-[400px] h-12 p-3 text-gray-900 border border-solid border-gray-300 rounded-lg shadow">
-
+        <input type="text" placeholder="Enter your email" class="sm:w-2/4 sm:max-w-[400px] h-12 p-3 text-gray-900 border border-solid border-gray-300 rounded-lg shadow" name="Email">
+        <input type="hidden" name="access_key" value="cd10c731-608a-48f7-b675-d57b82fe5298">
         <button type="submit" class="sm:w-1/4 sm:max-w-[180px] h-12 text-white bg-purple-600 rounded-lg shadow transition-all duration-300 ease-in-out hover:bg-purple-700">Subscribe</button>
 
       </div>
@@ -106,7 +194,7 @@
 
 
 
-
+<h1 style="text-align: center;">This website is in it's early stage so, stay tuned.</h1>
 
 
 
@@ -151,6 +239,34 @@ body.addEventListener("click" , e =>{
     if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
         nav.classList.remove("active");
     }
+});
+</script>
+
+<script>
+    const form = document.querySelector('form[name="ComingSoon"]');
+const successMessage = document.createElement('div'); // Create a div for the message
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            successMessage.textContent = "Success! You've been subscribed.";
+            successMessage.classList.add('success-notification'); // Add a class for styling
+            form.parentNode.insertBefore(successMessage, form.nextSibling); 
+        } else {
+            // Handle error (show an error message)
+        }
+    })
+    .catch(error => {
+        // Handle network or other errors
+    });
 });
 </script>
 
