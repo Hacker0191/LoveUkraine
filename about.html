@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Fluid Gradient with GASP (Round two) - Client facing</title>
+  <link rel="stylesheet" href="./style.css">
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Rozha+One&family=Yeseva+One&display=swap");
+    body {
+  margin: 0;
+  font-family: "Rozha One", serif;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, #eaf5fb 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+.hero__content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  line-height: 0.8;
+  color: #005C84;
+}
+
+.hero-gradient__container {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+}
+
+.hero-gradient__wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  filter: blur(6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-gradient__one {
+  position: absolute;
+  width: 40vw;
+  height: 30vw;
+  background: #BDF0C6;
+  border-radius: 80% 20% 60%;
+  border-radius: 50%;
+  filter: none;
+  bottom: -5%;
+  left: -15%;
+}
+
+#hero-gradient__two {
+  position: absolute;
+  width: 50vw;
+  height: 60vw;
+  background: #A2D1EB;
+  border-radius: 80% 20% 60%;
+  border-radius: 50%;
+  filter: none;
+  top: 0;
+  left: -30%;
+}
+
+#hero-gradient__three {
+  position: absolute;
+  width: 70vw;
+  height: 90vw;
+  background: #C8E4F3;
+  border-radius: 80% 20% 60%;
+  border-radius: 50%;
+  filter: none;
+  top: -20%;
+  right: -35%;
+}
+
+#hero-gradient__four {
+  position: absolute;
+  width: 30vw;
+  height: 15vw;
+  border-radius: 80% 20% 60%;
+  background: #BDF0C6;
+  border-radius: 50%;
+  filter: none;
+  top: -10%;
+  right: 0;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide all regular page content on mobile */
+@media (max-width: 768px) { 
+  .page-content {
+    display: none; 
+  }
+}
+
+/* Style the warning message */
+.mobile-warning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-color: #f8f8f8; /* Adjust color if needed */
+} 
+
+</style>
+</head>
+<body>
+
+    <div class="page-content">
+   
+<!-- partial:index.partial.html -->
+<div class="hero">
+  <div class="hero-gradient__container">
+    <div class="hero-gradient__wrapper">
+      <div class="hero-gradient" id="hero-gradient__three"></div>
+      <div class="hero-gradient" id="hero-gradient__two"></div>
+      <div class="hero-gradient" id="hero-gradient__one"></div>
+<!--       <div class="hero-gradient" id="hero-gradient__four"></div> -->
+    </div>
+  </div>
+  <div class="hero__content">
+    <h1> <span style="color: #0057b8;"> W</span><span style="color: #ffd700;">E</span>  <br><br> <img src="./images/ukraine.webp" style="height: 60px; width: auto;" alt=""> <br><span style="color: #0057b8;">UKR</span><span style="color: #ffd700;">AINE</span></h1>
+  </div>
+</div>
+<div class="content">
+<!--   <p>La La Content</p> -->
+</div>
+<!-- partial:index.partial.html -->
+<div class="hero">
+  <div class="hero-gradient__container">
+    <div class="hero-gradient__wrapper">
+      <div class="hero-gradient" id="hero-gradient__three"></div>
+      <div class="hero-gradient" id="hero-gradient__two"></div>
+      <div class="hero-gradient" id="hero-gradient__one"></div>
+<!--       <div class="hero-gradient" id="hero-gradient__four"></div> -->
+    </div>
+  </div>
+  <div class="hero__content">
+
+  </div>
+</div>
+<div class="content">
+<!--   <p>La La Content</p> -->
+</div>
+</div>
+
+<div class="mobile-warning">
+    <h1>Warning: This page is not optimized for mobile.</h1>
+    <p>Please view this page on a desktop device for the best experience.</p>
+  </div>
+<!-- partial -->
+<script>
+    window.addEventListener('load', () => {
+  // Add a class to the body to signal that the page is not mobile-friendly
+  document.body.classList.add('no-mobile-support'); 
+});
+
+</script>
+
+</body>
+</html>
